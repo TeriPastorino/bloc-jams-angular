@@ -2,10 +2,11 @@
 //blocJams = myAppModule in angular project instructions
 //blocJams = myApp
 
+  
 //empty array used to inject dependencies (external modules)
-var myAppModule = angular.module('myApp', ['ui.router]);
+angular.module('blocJams', ['ui.router']);
                                            
-myAppModule.config(function($stateProvider, $locationProvider){
+angular.module('blocJams').config(function($stateProvider, $locationProvider){
 //disable #! default in path
   $locationProvider.html5Mode({
     enabled: true,
@@ -14,8 +15,23 @@ myAppModule.config(function($stateProvider, $locationProvider){
   
   $stateProvider.state('album', {
     url: '/album',
-    controller: 'Album.controller',
+//    controller: 'Album.controller',
     templateUrl: '/templates/album.html'
   });
   
+  $stateProvider.state('collection', {
+    url: '/collection',
+//    controller: 'Album.controller',
+    templateUrl: '/templates/collection.html'
+  });
+  
+  $stateProvider.state('landing', {
+    url: '/landing',
+//    controller: 'Album.controller',
+    templateUrl: '/templates/landing.html'
+  });
+  
 });
+
+                            
+//angular.module('blocJams').controller()
