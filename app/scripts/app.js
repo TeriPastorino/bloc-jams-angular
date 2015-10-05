@@ -30,24 +30,5 @@ angular.module('blocJams').config(function($stateProvider, $locationProvider){
 });
 
 
-//wrap in closure?
-//angular.module('blocJams').controller()
-angular.module('blocJams').controller('LandingController', function($scope){
-  $scope.tagline = "Turn the music up!!";
-});
- 
- //add fixtures as a service 
-angular.module('blocJams').controller('AlbumController', function($scope, FixtureService){
-  $scope.currentAlbum = FixtureService.getAlbum();
-});
-  
- //albums are array...setup? 
-  //use angular.
-  //ng-repeat (view) alubms in collection
-  angular.module('blocJams').controller('CollectionController', function ($scope, FixtureService) {
-    $scope.albumArray = FixtureService.getCollection(30);
-});
-
-
 
 
