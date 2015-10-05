@@ -11,19 +11,19 @@ angular.module('blocJams').config(function($stateProvider, $locationProvider){
   
   $stateProvider.state('album', {
     url: '/album',
-//    controller: 'Album.controller',
+    controller: 'AlbumController',
     templateUrl: '/templates/album.html'
   });
   
   $stateProvider.state('collection', {
     url: '/collection',
-//    controller: 'Collection.controller',
+    controller: 'CollectionController',
     templateUrl: '/templates/collection.html'
   });
   
   $stateProvider.state('landing', {
-    url: '/landing',
-//    controller: 'Landing.controller',
+    url: '/',
+    controller: 'LandingController',
     templateUrl: '/templates/landing.html'
   });
   
@@ -36,17 +36,18 @@ angular.module('blocJams').controller('LandingController', function($scope){
   $scope.tagline = "Turn the music up!!";
 });
  
-  
-angular.module('blocJams').controller('AlbumController', function($scope){
-  $scope.??
+ //add fixtures as a service 
+angular.module('blocJams').controller('AlbumController', function($scope, FixtureService){
+  $scope.currentAlbum = FixtureService.getAlbum();
 });
   
-  
-  angular.module('blocJams').controller('Collection.controller', ['$scope', function ($scope) {
-    var albumsArray = [];
-    for (var i = 0; i < 8; i++) {
-       what here? (albumPicasso);
-    
-}]);
+ //albums are array...setup? 
+  //use angular.
+  //ng-repeat (view) alubms in collection
+  angular.module('blocJams').controller('CollectionController', function ($scope, FixtureService) {
+    $scope.albumArray = FixtureService.getCollection(30);
+});
+
+
 
 
