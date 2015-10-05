@@ -1,8 +1,4 @@
-//for refactoring later
-//blocJams = myAppModule in angular project instructions
-//blocJams = myApp
 
-  
 //empty array used to inject dependencies (external modules)
 angular.module('blocJams', ['ui.router']);
                                            
@@ -21,17 +17,36 @@ angular.module('blocJams').config(function($stateProvider, $locationProvider){
   
   $stateProvider.state('collection', {
     url: '/collection',
-//    controller: 'Album.controller',
+//    controller: 'Collection.controller',
     templateUrl: '/templates/collection.html'
   });
   
   $stateProvider.state('landing', {
     url: '/landing',
-//    controller: 'Album.controller',
+//    controller: 'Landing.controller',
     templateUrl: '/templates/landing.html'
   });
   
 });
 
-                            
+
+//wrap in closure?
 //angular.module('blocJams').controller()
+angular.module('blocJams').controller('LandingController', function($scope){
+  $scope.tagline = "Turn the music up!!";
+});
+ 
+  
+angular.module('blocJams').controller('AlbumController', function($scope){
+  $scope.??
+});
+  
+  
+  angular.module('blocJams').controller('Collection.controller', ['$scope', function ($scope) {
+    var albumsArray = [];
+    for (var i = 0; i < 8; i++) {
+       what here? (albumPicasso);
+    
+}]);
+
+
