@@ -5,3 +5,19 @@
 
       </div>
     </section>
+
+<section class="album-covers container clearfix">
+  <div class="collection-album-container column fourth" ng-repeat="currentAlbum in albumArray">
+      <img src="{{currentAlbum.albumArtUrl}}"/>
+      <div class="collection-album-info caption">
+        <p>
+          <a class="album-name" href="album.html">{{ currentAlbum.name }}</a>
+          <br/>
+          <a href="album.html">{{ currentAlbum.artist }}</a>
+          <br/>
+          {{currentAlbum.songs.length}} songs
+          <br/>
+        </p>
+      </div>
+    </div>
+</section>
